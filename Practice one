@@ -1,0 +1,28 @@
+<!-- 
+ Name: Marquice Lowes
+ file: https://marfrom44.github.io/WebDev/
+ Date: January 21st, 2025
+ Description: This is a copy of a letter for assignment 1
+-->
+
+
+
+<!doctype html>
+<html>
+    <head>
+        <title>Marquice Lowes</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* Add your CSS styles here */
+        </style>
+        <script src="script.js"></script> <!-- Add your JavaScript code here -->
+        <script>
+            // Add your JavaScript code here
+        </script>
+    </head>
+<body>
+<main>html lang="en">
+    <h1></h1>
+
+</html>
