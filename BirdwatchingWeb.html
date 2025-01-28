@@ -1,4 +1,4 @@
-]<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -63,20 +63,18 @@
             align-items: center; /* Vertically center items */
             justify-content: space-between; /* Distribute space */
             position: relative; /* For absolute positioning of dove */
-            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
             padding: 1%;
         }
 
         header h1 {
-            flex: 1; /* Allow h1 to take up available space */
             text-transform: uppercase;
         }
 
         nav {
             display: flex;
             align-items: center; /* Vertically center nav items */
-            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
             padding: 1%;
+            margin-left: auto; /* Push nav to the right */
         }
 
         nav ul {
@@ -110,11 +108,9 @@
             z-index: 10;
         }
 
-
         /* Main Layout */
         main {
             display: flex;
-            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
             padding: 1%;
         }
 
@@ -126,19 +122,18 @@
             flex: 1;
             margin-left: 10px;
             padding: 1%;
-            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
             display: flex;
             flex-direction: column;
             align-items: flex-start;
         }
 
-      .image-grid {
+        .image-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
-      .image-grid img {
+        .image-grid img {
             width: 100%;
             height: auto;
             display: block;
@@ -159,13 +154,7 @@
         footer {
             margin-top: 10px;
             text-align: center;
-            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
             padding: 1%;
-        }
-
-        /* Temporary styles - remove or replace as needed */
-        body > *, main, header, nav, article, aside, footer, section {
-            background-color: rgba(0, 255, 0, 0.5); /* Green with opacity */
         }
 
     </style>
@@ -202,5 +191,7 @@
     </main>
     <footer>
         <p>This fake website example is CC0 &mdash; any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
-        <p><a href="http://game-icons.net/lor
-
+        <p><a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.</p>
+    </footer>
+</body>
+</html>
