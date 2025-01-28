@@ -64,8 +64,14 @@
             padding: 20px;
         }
 
-        aside img {
-            width: 100%;
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns */
+            gap: 10px; /* Space between images */
+        }
+
+        .image-grid img {
+            width: 100%; /* Images fill their cells */
             margin-bottom: 10px;
         }
 
@@ -102,10 +108,12 @@
         </article>
         <aside>
             <h2>Favourite Photos</h2>
-            <img src="favorite-1.jpg" alt="Black bird">
-            <img src="favorite-2.jpg" alt="Blue bird">
-            <img src="favorite-3.jpg" alt="White bird with long beak">
-            <img src="favorite-4.jpg" alt="White and black bird">
+            <div class="image-grid">
+                <img src="favorite-1.jpg" alt="Black bird">
+                <img src="favorite-2.jpg" alt="Blue bird">
+                <img src="favorite-3.jpg" alt="White bird with long beak">
+                <img src="favorite-4.jpg" alt="White and black bird">
+            </div>
         </aside>
     </main>
     <footer>
