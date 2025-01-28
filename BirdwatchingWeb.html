@@ -15,12 +15,12 @@
 
         html {
             font-size: 10px; /* Base font size for rem units */
-            background-color: #a9a9a9;
+            background-color: #a9a9a9; /* Light gray background */
         }
 
         body {
-            width: 70%;
-            min-width: 800px;
+            width: 100%; /* Body takes full width */
+            min-width: 800px; /* Minimum width for larger screens */
             margin: 0 auto;
         }
 
@@ -59,21 +59,35 @@
         header {
             margin-bottom: 10px;
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-end; /* Align to the right */
-            position: relative; /* For positioning the dove */
+            flex-direction: column;
+            align-items: flex-end;
+            position: relative;
             padding: 1%;
+            background-color: #90ee90; /* Light green background for header */
         }
 
         header h1 {
-            align-self: flex-start; /* Align to the left */
-            margin-bottom: 10px; /* Space between heading and nav */
+            align-self: flex-start;
+            margin-bottom: 10px;
         }
 
         nav {
-            align-self: flex-start; /* Align to the left */
+            align-self: flex-start;
             display: flex;
-            /*... other nav styles... */
+            align-items: center;
+            background-color: #90ee90; /* Light green background for nav */
+        }
+
+        nav ul {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav li {
+            display: inline;
+            text-align: center;
+            margin-right: 15px;
         }
 
         /* Dove Icon */
@@ -89,8 +103,9 @@
         /* Main Layout */
         main {
             display: flex;
-            justify-content: flex-start; /* Align items to the start (left) */
+            justify-content: flex-start;
             padding: 1%;
+            background-color: #90ee90; /* Light green background for main */
         }
 
         article {
@@ -107,13 +122,13 @@
             background-color: #e6ffcc; /* Light green background for aside */
         }
 
-      .image-grid {
+        .image-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 20px; /* Increased gap between images */
         }
 
-      .image-grid img {
+        .image-grid img {
             width: 100%;
             height: auto;
             display: block;
@@ -124,6 +139,7 @@
             margin-top: 10px;
             text-align: center;
             padding: 1%;
+            background-color: #90ee90; /* Light green background for footer */
         }
 
     </style>
@@ -145,4 +161,22 @@
     <main>
         <article>
             <h2>Welcome</h2>
-            <p>Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas
+            <p>Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas, tips, and photos with other like-minded people.</p>
+            <p>So don't waste time! Get what you need, then turn off that computer and get out into the great outdoors!</p>
+        </article>
+        <aside>
+            <h2>Favourite Photos</h2>
+            <div class="image-grid">
+                <img src="favorite-1.jpg" alt="Black bird">
+                <img src="favorite-2.jpg" alt="Blue bird">
+                <img src="favorite-3.jpg" alt="White bird with long beak">
+                <img src="favorite-4.jpg" alt="White and black bird">
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>This fake website example is CC0 &mdash; any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
+        <p><a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.</p>
+    </footer>
+</body>
+</html> whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas
