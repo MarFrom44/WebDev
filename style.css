@@ -19,17 +19,17 @@ body {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
-    gap: 10px; /* Gap between grid items */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);    
+    gap: 10px; 
 }
 
 .image-grid img {
     width: 100%;
-    height: 100%; /* Make images fill their grid cells */
-    object-fit: cover; /* Cover the entire cell, cropping if necessary */
-    border: 5px solid limegreen; /* Green border */
-    box-sizing: border-box; /* Include border in element's total width and height */
+    height: 100%;
+    object-fit: cover; 
+    border: 5px solid limegreen; 
+    box-sizing: border-box; 
 }
 
 
