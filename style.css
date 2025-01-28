@@ -16,23 +16,6 @@ body {
   margin: 0 auto;
 }
 
-
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);    
-    gap: 10px; 
-}
-
-.image-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    border: 5px solid limegreen; 
-    box-sizing: border-box; 
-}
-
-
 /* || typography */
 
 h1, h2, h3 {
@@ -132,6 +115,21 @@ main {
 
 article, section {
   flex: 4;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);    
+    gap: 10px; 
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border: 5px solid limegreen; 
+    box-sizing: border-box; 
 }
 
 aside {
