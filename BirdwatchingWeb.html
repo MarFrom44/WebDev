@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+]<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,177 +7,174 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        
-html, body {
-  margin: 0;
-  padding: 0;
-}
+        /* Reset default margins and padding */
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
 
-html {
-  font-size: 10px;
-  background-color: #a9a9a9;
-}
+        html {
+            font-size: 10px; /* Base font size for rem units */
+            background-color: #a9a9a9;
+        }
 
-body {
-  width: 70%;
-  min-width: 800px;
-  margin: 0 auto;
-}
+        body {
+            width: 70%;
+            min-width: 800px;
+            margin: 0 auto;
+        }
 
-/* || typography */
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Cinzel Decorative', cursive;
+            color: #2a2a2a;
+        }
 
-h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
-  color: #2a2a2a;
-}
+        p, input, li {
+            font-family: 'Roboto Condensed', sans-serif;
+            color: #2a2a2a;
+        }
 
-p, input, li {
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #2a2a2a;
-}
+        h1 {
+            font-size: 4rem;
+            text-align: center;
+            text-shadow: 2px 2px 10px black;
+        }
 
-header img#dove-icon {
-    position: absolute;
-    top: 20px; 
-    right: 0px; 
-    height: 60px; 
-    width: auto; 
-    z-index: 10;
-}
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
 
-h1 {
-  font-size: 4rem;
-  text-align: center;
-  text-shadow: 2px 2px 10px black;
-}
+        h3 {
+            font-size: 2.2rem;
+        }
 
-h2 {
-  font-size: 3rem;
-  text-align: center;
-}
+        p, li {
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
 
-h3 {
-  font-size: 2.2rem;
-}
+        /* Header Layout */
+        header {
+            margin-bottom: 10px;
+            display: flex;
+            flex-flow: row nowrap; /* Prevent wrapping */
+            align-items: center; /* Vertically center items */
+            justify-content: space-between; /* Distribute space */
+            position: relative; /* For absolute positioning of dove */
+            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
+            padding: 1%;
+        }
 
-p, li {
-  font-size: 1.6rem;
-  line-height: 1.5;
-}
+        header h1 {
+            flex: 1; /* Allow h1 to take up available space */
+            text-transform: uppercase;
+        }
 
-/* || header layout */
+        nav {
+            display: flex;
+            align-items: center; /* Vertically center nav items */
+            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
+            padding: 1%;
+        }
 
-header {
-  margin-bottom: 10px;
-  display: flex;
-  flex-flow: row wrap;
-}
+        nav ul {
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+        }
 
-body > * {
-  background-color: red;
-  padding: 1%;
-}
+        nav li {
+            display: inline;
+            text-align: center;
+            flex: 1;
+        }
 
-main, header, nav, article, aside, footer, section {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
-}
+        nav a, nav span {
+            display: inline-block;
+            font-size: 2rem;
+            height: 3rem;
+            line-height: 1.7;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+        }
 
-h1 {
-  flex: 5;
-  text-transform: uppercase;
-}
+        header img#dove-icon {
+            position: absolute;
+            top: 20px; /* Adjust as needed */
+            right: 20px; /* Adjust as needed */
+            height: 60px;
+            width: auto;
+            z-index: 10;
+        }
 
-header img {
-  display: block;
-  height: 60px;
-  padding-top: 20.15px;
-}
 
-nav {
-  height: 50px;
-  flex: 100%;
-  display: flex;
-}
+        /* Main Layout */
+        main {
+            display: flex;
+            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
+            padding: 1%;
+        }
 
-nav ul {
-  padding: 0;
-  list-style-type: none;
-  flex: 2;
-  display: flex;
-}
+        article, section {
+            flex: 4;
+        }
 
-nav li {
-  display: inline;
-  text-align: center;
-  flex: 1;
-}
+        aside {
+            flex: 1;
+            margin-left: 10px;
+            padding: 1%;
+            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-nav a, nav span {
-  display: inline-block;
-  font-size: 2rem;
-  height: 3rem;
-  line-height: 1.7;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: black;
+      .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
 
-}
+      .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-/* || main layout */
+        aside a {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
 
-main {
-  display: flex;
-}
+        aside img {
+            max-width: 100%;
+            display: block;
+        }
 
-article, section {
-  flex: 4;
-}
+        /* Footer */
+        footer {
+            margin-top: 10px;
+            text-align: center;
+            background-color: rgba(0, 255, 0, 0.5); /* Temporary background color */
+            padding: 1%;
+        }
 
-/* ... other CSS styles ... */
+        /* Temporary styles - remove or replace as needed */
+        body > *, main, header, nav, article, aside, footer, section {
+            background-color: rgba(0, 255, 0, 0.5); /* Green with opacity */
+        }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.image-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-aside {
-    background-color: rgba(0,255,0,0.5);
-    padding: 20px;
-}
-
-aside {
-  flex: 1;
-  margin-left: 10px;
-  padding: 1%;
-}
-
-aside a {
-  display: block;
-  float: left;
-  width: 50%;
-}
-
-aside img {
-  max-width: 100%;
-}
-
-footer {
-  margin-top: 10px;
-}
     </style>
 </head>
 <body>
     <header>
         <h1>Birdwatching</h1>
-        <img src="dove.png" alt="Dove Icon" id="dove-icon">  <nav>
+        <img src="dove.png" alt="Dove Icon" id="dove-icon">
+        <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Get Started</a></li>
@@ -205,8 +202,5 @@ footer {
     </main>
     <footer>
         <p>This fake website example is CC0 &mdash; any part of this code may be reused in any way you wish. Original example written by Chris Mills, 2016.</p>
-        <p><a href="http://game-icons.net/lorc/originals/dove.html">Dove icon</a> by Lorc.</p>
-    </footer>
-</body>
-</html>
+        <p><a href="http://game-icons.net/lor
 
