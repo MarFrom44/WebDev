@@ -16,6 +16,17 @@ body {
   margin: 0 auto;
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px; /* Increased gap between images */
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 /* || typography */
 
 h1, h2, h3 {
