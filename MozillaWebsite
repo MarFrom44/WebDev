@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
 
         html {
             font-family: 'Open Sans', sans-serif;
-            background: url("pattern.png"); /* Make sure "pattern.png" is in the same directory */
+            background: url("pattern.png"); /* Correct file name */
         }
 
         body {
@@ -32,7 +32,7 @@
             position: absolute;
             right: 32.5px;
             top: 32.5px;
-            src: url("mozilla_logo.png"); /* Make sure "mozilla_logo.png" is in the same directory */
+            src: url("firefox-logo400.png"); /* Correct file name */
         }
 
         h1 {
@@ -63,12 +63,12 @@
             float: left;
             margin: 0 20px 20px 0;
             max-width: 100%;
-            src: url("video_thumbnail.png"); /* Make sure "video_thumbnail.png" is in the same directory */
+            src: url("video_thumbnail.png"); /* You'll need to provide the correct video thumbnail */
         }
 
         /* further info links */
 
-        .further-info {
+      .further-info {
             clear: left;
             padding: 40px 0;
             background: #c13832;
@@ -76,26 +76,26 @@
                         inset 0 -3px 2px rgba(0,0,0,0.5);
         }
 
-        .further-info a {
+      .further-info a {
             width: 25%;
             display: block;
             float: left;
         }
 
-        .further-info img {
+      .further-info img {
             max-width: 100%;
         }
 
-        .clearfix {
+      .clearfix {
             clear: both;
         }
 
         /* Red panda image */
 
-        .red-panda img {
+      .red-panda img {
             display: block;
             max-width: 100%;
-            src: url("red_panda.jpg"); /* Make sure "red_panda.jpg" is in the same directory */
+            src: url("red-panda-landscape.jpg"); /* Correct file name */
         }
     </style>
 </head>
@@ -106,7 +106,7 @@
 
     <main>
         <article>
-            <iframe width="560" height="315"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=ojcNcvb1olg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <h2>Rocking the free web</h2>
 
@@ -117,18 +117,19 @@
 
         <div class="further-info">
             <a href="https://www.mozilla.org/en-US/firefox/new/">
-                <img src="feature1.png" alt="Feature 1">  </a>
+                <img src="mozilla-dinosaur400.png" alt="Feature 1">  </a>
             <a href="https://www.mozilla.org/">
-                <img src="feature2.png" alt="Feature 2">  </a>
+                <img src="MozillaWebsite" alt="Feature 2">  </a>
             <a href="https://addons.mozilla.org/">
-                <img src="feature3.png" alt="Feature 3">  </a>
+                <img src="firefox-addons400.jpg" alt="Feature 3">  </a>
             <a href="https://developer.mozilla.org/en-US/">
-                <img src="feature4.png" alt="Feature 4">  </a>
+                <img src="mdn.svg" alt="Feature 4">  </a>
             <div class="clearfix"></div>
         </div>
 
         <div class="red-panda">
-            <img alt="Red Panda"> </div>
+            <img src="red-panda-landscape.jpg" alt="Red Panda"> 
+        </div>
 
     </main>
 </body>
