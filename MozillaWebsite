@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mozilla - Choose Independent</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-image: url("background_image.png"); /* Use YOUR background image file name */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333; /* Adjust text color as needed */
+        }
+        header, nav, section, footer {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        header {
+            text-align: center; /* Center the header content */
+        }
+        nav ul {
+            list-style: none; /* Remove bullet points from list */
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav li {
+            display: inline; /* Make list items horizontal */
+            margin: 0 10px; /* Add some space between list items */
+        }
+        .hero {
+            text-align: center; /* Center the hero content */
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .feature {
+            text-align: center;
+        }
+        .feature img {
+            max-width: 150px;
+            height: auto;
+        }
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mozilla</h1>
+        <img src="mozilla_logo.png" alt="Mozilla Logo" width="100"> 
+    </header>
+
+    <nav>
+        <ul>
+            <li>Choose Independent - Choose Firefox</li>
+            <li><img src="video_thumbnail.png" alt="Video Thumbnail" width="80"></li> 
+        </ul>
+    </nav>
+
+    <section>
+        <div class="hero">
+            <h2>Rocking the free web</h2>
+            <p>Mozilla are a global community of technologists, thinkers, and builders, working together to keep the internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
+            <img src="red_panda.jpg" alt="Red Panda" >
+            <p>Click on the images below to find more information about the cool stuff Mozilla does. Red panda picture by Mathias Appel.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <img src="feature1.png" alt="Feature 1">
+            </div>
+            <div class="feature">
+                <img src="feature2.png" alt="Feature 2">
+            </div>
+            <div class="feature">
+                <img src="feature3.png" alt="Feature 3">
+            </div>
+            <div class="feature">
+                <img src="feature4.png" alt="Feature 4">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Mozilla Foundation</p>
+    </footer>
+
+</body>
+</html>
