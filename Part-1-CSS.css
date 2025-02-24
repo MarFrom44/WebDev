@@ -3,42 +3,45 @@ body {
 }
 
 h1 {
-  color: #375e97;
-  font-size: 2em;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  border-bottom: 1px solid 	#BF40BF;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: hotpink;
+    border-bottom: 1px solid #BF40BF;
 }
+
 h1::after {
-  content: "....................";
-  display: block;
-  color: purple;
-  margin-top: 5px;
+    content: "....................";
+    display: block;
+    color: purple;
+    margin-top: 5px;
+}
 
 h2 {
-  font-size: 1.5em;
-  font-style: italic;
+    font-size: 1.5em;
+    font-style: italic;
 }
 
 .job-title {
-  color: #555;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: 20px;
+    color: #555;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 a:link,
 a:visited {
-  color: #fb6542;
+    color: #007bff; 
 }
 
 a:hover {
-  text-decoration: none;
-  color: green;
+    text-decoration: underline; 
+    color: green;
 }
 
 ul {
-  background-color: #eeeeee;
-  border: 2px solid purple;
-  padding: 20px;
-  life-style-type: disc;
+    background-color: #eeeeee;
+    border: 2px solid purple;
+    padding: 20px;
+    list-style-type: disc; 
 }
+
+
