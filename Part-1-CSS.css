@@ -8,6 +8,11 @@ h1 {
   font-family: Georgia, "Times New Roman", Times, serif;
   border-bottom: 1px solid 	#BF40BF;
 }
+h1::after {
+  content: "....................";
+  display: block;
+  color: purple;
+  margin-top: 5px;
 
 h2 {
   font-size: 1.5em;
@@ -15,8 +20,10 @@ h2 {
 }
 
 .job-title {
-  color: #999999;
+  color: #555;
+  font-size: 1.2em;
   font-weight: bold;
+  margin-bottom: 20px;
 }
 
 a:link,
