@@ -1,18 +1,12 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
-    font-family: Georgia, "Times New Roman", Times, serif;
     color: hotpink;
-    border-bottom: 1px solid #BF40BF;
-}
-
-h1::after {
-    content: "....................";
-    display: block;
-    color: purple;
-    margin-top: 5px;
+    font-size: 2em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    border-bottom: 10px dotted purple;
 }
 
 h2 {
@@ -21,27 +15,24 @@ h2 {
 }
 
 .job-title {
-    color: #555;
-    font-size: 1.2em;
+    color: #999999;
     font-weight: bold;
-    margin-bottom: 20px;
 }
 
 a:link,
 a:visited {
-    color: #007bff; 
+    color: #fb6542;
 }
 
 a:hover {
-    text-decoration: underline; 
+    text-decoration: none;
     color: green;
 }
 
 ul {
     background-color: #eeeeee;
-    border: 2px solid purple;
-    padding: 20px;
-    list-style-type: disc; 
+    border: 5px solid purple;
+    padding: 10px;
 }
 
 
