@@ -3,13 +3,17 @@
   box-sizing: border-box;
 }
 
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
   min-width: 1000px;
   max-width: 1400px;
 }
 
-/* Layout */
 
 section {
   float: left;
@@ -34,21 +38,27 @@ header, section, aside, nav, footer {
   padding: 20px;
 }
 
+/* header and footer */
 
 header, footer {
   border-top: 5px solid #a66;
   border-bottom: 5px solid #a66;
 }
 
+/* Corrected Styles */
+
 body {
   font-family: serif;
   line-height: 1.6;
+  background-color: #f9f9f9;
+  font-size: 15px; 
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 3.2em; 
   text-align: center;
   margin-bottom: 20px;
+  font-weight: 700; 
 }
 
 h2 {
@@ -59,13 +69,16 @@ h2 {
 nav a {
   display: block;
   background-color: #f0f0f0;
-  padding: 12px 18px;
-  margin-bottom: 5px;
+  padding: 10px 15px; 
+  margin-bottom: 10px; 
   text-decoration: none;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 5px;
   color: #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px; 
+  font-weight: 500; 
 }
 
 nav a:hover {
@@ -80,6 +93,12 @@ ul {
 
 aside ul {
   list-style-type: disc;
+  margin-bottom: 8px;
+  font-size: 0.9em; 
+}
+
+aside ul li {
+  margin-bottom: 3px; 
 }
 
 footer {
@@ -93,7 +112,7 @@ p {
 }
 
 aside a, section a {
-  color: #007bff;
+  color: #8b0000; 
   text-decoration: none;
 }
 
@@ -101,16 +120,10 @@ aside a:hover, section a:hover {
   text-decoration: underline;
 }
 
-
 header {
   margin-bottom: 20px;
 }
 
 nav {
   padding-top: 30px;
-}
-
-
-a {
-  color: orange;
 }
