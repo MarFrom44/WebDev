@@ -31,55 +31,112 @@ footer {
   clear: both;
 }
 
-header, section, aside, nav, footer {
+header,
+section,
+aside,
+nav,
+footer {
   padding: 20px;
 }
 
 /* header and footer */
 
-header, footer {
+header,
+footer {
   border-top: 5px solid #a66;
   border-bottom: 5px solid #a66;
 }
 
-}
+/* Corrected Styles */
 
-/* typography stuff */
-
-html {
-  font-family: lovatolight, serif;
-  font-size: 10px;
-}
-
-h1, h2 {
-  font-family: josefin_slabbold, sans-serif;
-  letter-spacing: 2px;
+body {
+  font-family: serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  font-size: 15px;
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 3.2em;
   text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 1.8em;
+  margin-bottom: 10px;
 }
 
-section h2 + p {
-  text-indent: 20px;
+nav a {
+  display: block;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #333;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  font-weight: 500;
 }
 
-p, li {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  letter-spacing: 0.5px;
-  word-spacing: 3px;
+nav a:hover {
+  background-color: #e0e0e0;
+}
+
+ul {
+  list-style-type: square;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+aside ul {
+  list-style-type: disc;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+aside ul li {
+  margin-bottom: 3px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+aside a,
+section a {
+  color: #8b0000;
+  text-decoration: none;
+}
+
+aside a:hover,
+section a:hover {
+  text-decoration: underline;
+}
+
+/* Specific adjustments */
+header {
+  margin-bottom: 20px;
+}
+
+nav {
+  padding-top: 30px;
 }
 
 /* Link styling */
-
 a {
   outline: none;
+  color: #8b0000;
 }
 
 a[href*="http"] {
@@ -88,65 +145,13 @@ a[href*="http"] {
   background-size: 16px 16px;
 }
 
-a:link, a:visited {
-  color: #a66;
-}
-
-a:focus, a:hover {
+a:focus,
+a:hover {
   text-decoration: none;
 }
 
 a:active {
   color: transparent;
-  text-shadow: 0px 0px 1px #f00,
-               0px 0px 2px #f00,
-               0px 0px 3px black,
-               0px 0px 4px black;
-}
-
-/* lists: extra margin top and bottom to make it
-always have the same spacing as with paragraphs */
-
-ul, ol {
-  margin: 1.6rem 0;
-}
-
-ul {
-  list-style-type: square;
-}
-
-ol {
-  list-style-type: lower-latin;
-}
-
-/* nav menu */
-
-nav ul {
-  padding-left: 0;
-  margin-top: 0.8rem;
-}
-
-nav li {
-  list-style-type: none;
-  margin-bottom: 2rem;
-}
-
-nav li a {
-  text-decoration: none;
-  display: inline-block;
-  width: 100%;
-  line-height: 3;
-  text-align: center;
-  font-size: 2.5rem;
-  border: 1px solid #a66;
-}
-
-nav li a:focus, nav li a:hover {
-  color: white;
-  background: #a66;
-}
-
-nav li a:active {
-  color: white;
-  background: black;
+  text-shadow: 0px 0px 1px #f00, 0px 0px 2px #f00, 0px 0px 3px black,
+    0px 0px 4px black;
 }
