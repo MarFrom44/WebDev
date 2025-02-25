@@ -1,50 +1,92 @@
-body {
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    font: 1.2em / 1.2 Arial, Helvetica, sans-serif;
-  }
-  img {
-      max-width: 100%;
-      display: block;
-  }
-  
-  .logo {
-    font-size: 200%;
-    padding: 50px 20px;
-    margin: 0 auto;
-    max-width: 980px;
-  }
-  
-  .grid {
-    margin: 0 auto;
-    padding: 0 20px;
-    max-width: 980px;
-  }
-  
-  nav {
-    background-color: #000;
-    padding: .5em;
-  }
-  
-  nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: .5em 1em;
-  }
-  
-  .photos {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+/* General setup */
 
-  .feature {
-      width: 200px;
-  }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif; 
+  background-color: #f8f8f8; 
+}
+
+
+.logo {
+  font-size: 2em; 
+  padding: 20px;
+}
+
+/* Navigation */
+
+nav {
+  background-color: #333; 
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Main Content */
+
+.grid {
+  display: flex; /* Use flexbox for layout */
+  padding: 20px;
+}
+
+article {
+  flex: 2; /* Adjust width */
+  padding-right: 20px;
+}
+
+article img.feature {
+  float: left; 
+  margin-right: 20px;
+  max-width: 40%;
+  height: auto;
+}
+
+aside {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; 
+}
+
+aside img {
+  width: 100%;
+  height: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+h1 {
+  font-size: 2.5em; 
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+}
