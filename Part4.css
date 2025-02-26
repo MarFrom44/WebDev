@@ -13,24 +13,25 @@ img {
 .logo {
   font-size: 200%;
   padding: 50px 20px;
-  width: 940px; 
+  width: 940px;
   margin: 0 auto;
 }
 
 .grid {
-  width: 940px; 
+  width: 940px;
   margin: 0 auto;
   padding: 0 20px;
-  display: flex; 
+  display: flex;
 }
 
 article {
-  flex: 3; 
+  flex: 3;
   padding-right: 20px;
 }
 
 aside {
-  flex: 1; 
+  flex: 1;
+}
 
 nav {
   background-color: #000;
@@ -44,7 +45,7 @@ nav ul {
   padding: 0;
   list-style: none;
   display: flex;
-  justify-content: space-around; 
+  justify-content: space-around;
 }
 
 nav a {
@@ -57,17 +58,17 @@ nav a {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; 
-  flex-wrap: wrap; 
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .photos li {
-  width: calc(50% - 1px); 
+  width: calc(50% - 1px);
   margin: 0;
 }
 
 .photos img {
-  margin: 0 1px 1px 0; 
+  margin: 0 1px 1px 0;
 }
 
 .feature {
