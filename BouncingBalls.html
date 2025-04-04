@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bouncing Balls</title>
     <style>
-        /* Very simple styles, which mainly serve to style and position the h1, */
-        /* and get rid of any scrollbars or margin around the edge of the page */
-        /* (so that it looks nice and neat). */
+    
 
         body {
             margin: 0;
             overflow: hidden;
-            /* Make sure the body doesn't have scrollbars */
         }
 
         h1 {
@@ -22,18 +19,15 @@
             top: 0px;
             left: 50%;
             transform: translateX(-50%);
-            /* center the h1 */
             font-family: 'Arial Black', sans-serif;
             z-index: 10;
-            /* Ensure the heading is above the canvas */
-            background-color: rgba(0, 0, 0, 0.6); /* Optional background for better readability */
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 5px 10px;
             border-radius: 0px;
         }
 
         canvas {
             display: block;
-            /* Removes extra space below the canvas */
         }
     </style>
 </head>
@@ -119,8 +113,6 @@
         while (balls.length < 25) {
             const size = random(10, 20);
             const ball = new Ball(
-                // ball position always drawn at least one ball width
-                // away from the edge of the canvas, to avoid drawing errors
                 random(0 + size, width - size),
                 random(0 + size, height - size),
                 random(-7, 7),
