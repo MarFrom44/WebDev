@@ -9,21 +9,20 @@
         body {
             margin: 0;
             overflow: hidden;
-            /* Make sure the body doesn't have scrollbars */
-            background-color: #111; /* Darker background */
+            background-color: #111; 
         }
 
         h1 {
             color: white;
-            font-size: 24px; /* Larger title */
+            font-size: 24px; 
             position: absolute;
-            top: 10px;      /* More space from top */
+            top: 10px;      
             left: 50%;
             transform: translateX(-50%);
-            /* center the h1 */
+            
             font-family: 'Arial Black', sans-serif;
             z-index: 10;
-            /* Ensure the heading is above the canvas */
+        
             background-color: rgba(0, 0, 0, 0.7); 
             padding: 10px 20px;
             border-radius: 5px;  /* Rounded corners */
@@ -32,7 +31,7 @@
 
         canvas {
             display: block;
-            /* Removes extra space below the canvas */
+            
         }
 
         p {
@@ -92,10 +91,10 @@
             }
 
             draw() {
-                if (this.exists) { // Only draw if the ball exists
+                if (this.exists) { 
                     ctx.beginPath();
                     ctx.fillStyle = this.color;
-                    ctx.globalAlpha = this.opacity; // Use the ball's opacity
+                    ctx.globalAlpha = this.opacity; 
                     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
                     ctx.fill();
                     ctx.globalAlpha = 1;             
@@ -125,13 +124,13 @@
                 // Fade-in effect
                 if (this.opacity < 1) {
                     this.opacity += this.fadeSpeed;
-                    if (this.opacity > 1) this.opacity = 1; // Clamp opacity
+                    if (this.opacity > 1) this.opacity = 1; 
                 }
             }
 
             collisionDetect() {
                 for (const ball of balls) {
-                    if (!(this === ball) && ball.exists) { // Only check for collision with other existing balls
+                    if (!(this === ball) && ball.exists) { 
                         const dx = this.x - ball.x;
                         const dy = this.y - ball.y;
                         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -146,17 +145,17 @@
 
         class EvilCircle extends Shape {
             constructor(x, y) {
-                super(x, y, 20, 20); // velX and velY are hardcoded to 20
+                super(x, y, 20, 20); 
                 this.color = 'white';
-                this.size = 15;  // Increased size for visibility
+                this.size = 15;  
             }
 
             draw() {
                 ctx.beginPath();
-                ctx.strokeStyle = this.color;  // Use stroke instead of fill
-                ctx.lineWidth = 3;             // Make the line thicker
+                ctx.strokeStyle = this.color; 
+                ctx.lineWidth = 3;             
                 ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-                ctx.stroke();                   // Use stroke() instead of fill()
+                ctx.stroke();                   
             }
 
             checkBounds() {
@@ -178,7 +177,7 @@
             }
 
             collisionDetect() {
-                for (let i = 0; i < balls.length; i++) { // Iterate using index
+                for (let i = 0; i < balls.length; i++) { 
                     const ball = balls[i];
                     if (ball.exists) {
                         const dx = this.x - ball.x;
@@ -187,10 +186,10 @@
 
                         if (distance < this.size + ball.size) {
                             ball.exists = false;
-                            balls.splice(i, 1); // Remove the ball from the array
-                            ballCount--; // Decrement the ball counter
-                            ballCountDisplay.textContent = ballCount; // Update display
-                            break; // Important:  Only eat one ball per frame!
+                            balls.splice(i, 1); 
+                            ballCount--; 
+                            ballCountDisplay.textContent = ballCount; 
+                            break; 
                         }
                     }
                 }
@@ -240,7 +239,7 @@
 
 
         function loop() {
-            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";  // Even more subtle trails
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";  
             ctx.fillRect(0, 0, width, height);
 
             for (let i = 0; i < balls.length; i++) {
