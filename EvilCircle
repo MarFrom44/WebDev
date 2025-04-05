@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls</title>
+    <style>
+        
+        body {
+            margin: 0;
+            overflow: hidden;
+            /* Make sure the body doesn't have scrollbars */
+            background-color: #111; /* Darker background */
+        }
+
+        h1 {
+            color: white;
+            font-size: 24px; /* Larger title */
+            position: absolute;
+            top: 10px;      /* More space from top */
+            left: 50%;
+            transform: translateX(-50%);
+            /* center the h1 */
+            font-family: 'Arial Black', sans-serif;
+            z-index: 10;
+            /* Ensure the heading is above the canvas */
+            background-color: rgba(0, 0, 0, 0.7); 
+            padding: 10px 20px;
+            border-radius: 5px;  /* Rounded corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+        }
+
+        canvas {
+            display: block;
+            /* Removes extra space below the canvas */
+        }
+
+        p {
+            position: absolute;
+            margin: 0;
+            top: 35px;
+            right: 5px;
+            color: #aaa;
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Bouncing Balls</h1>
+    <p>Ball count: <span id="ball-count">25</span></p>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+
+        const width = (canvas.width = window.innerWidth);
+        const height = (canvas.height = window.innerHeight);
+
+        // function to generate random number
+        function random(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // function to generate random RGB color value
+        function randomRGB() {
+            return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+        }
+
+        class Shape {
+            constructor(x, y, velX, velY) {
+                this.x = x;
+                this.y = y;
+                this.velX = velX;
+                this.velY = velY;
+            }
+        }
+
+        class Ball extends Shape {
+            constructor(x, y, velX, velY, color, size) {
+                super(x, y, velX, velY);
+                this.color = color;
+                this.size = size;
+                this.opacity = 0;        
+                this.fadeSpeed = 0.02;  
+                this.exists = true;
+            }
+
+            draw() {
+                if (this.exists) { // Only draw if the ball exists
+                    ctx.beginPath();
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = this.opacity; // Use the ball's opacity
+                    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+                    ctx.fill();
+                    ctx.globalAlpha = 1;             
+                }
+            }
+
+            update() {
+                if (this.x + this.size >= width) {
+                    this.velX = -Math.abs(this.velX);
+                }
+
+                if (this.x - this.size <= 0) {
+                    this.velX = Math.abs(this.velX);
+                }
+
+                if (this.y + this.size >= height) {
+                    this.velY = -Math.abs(this.velY);
+                }
+
+                if (this.y - this.size <= 0) {
+                    this.velY = Math.abs(this.velY);
+                }
+
+                this.x += this.velX;
+                this.y += this.velY;
+
+                // Fade-in effect
+                if (this.opacity < 1) {
+                    this.opacity += this.fadeSpeed;
+                    if (this.opacity > 1) this.opacity = 1; // Clamp opacity
+                }
+            }
+
+            collisionDetect() {
+                for (const ball of balls) {
+                    if (!(this === ball) && ball.exists) { // Only check for collision with other existing balls
+                        const dx = this.x - ball.x;
+                        const dy = this.y - ball.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < this.size + ball.size) {
+                            ball.color = this.color = randomRGB();
+                        }
+                    }
+                }
+            }
+        }
+
+        class EvilCircle extends Shape {
+            constructor(x, y) {
+                super(x, y, 20, 20); // velX and velY are hardcoded to 20
+                this.color = 'white';
+                this.size = 15;  // Increased size for visibility
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.strokeStyle = this.color;  // Use stroke instead of fill
+                ctx.lineWidth = 3;             // Make the line thicker
+                ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+                ctx.stroke();                   // Use stroke() instead of fill()
+            }
+
+            checkBounds() {
+                if (this.x + this.size >= width) {
+                    this.x = width - this.size;
+                }
+
+                if (this.x - this.size <= 0) {
+                    this.x = this.size;
+                }
+
+                if (this.y + this.size >= height) {
+                    this.y = height - this.size;
+                }
+
+                if (this.y - this.size <= 0) {
+                    this.y = this.size;
+                }
+            }
+
+            collisionDetect() {
+                for (let i = 0; i < balls.length; i++) { // Iterate using index
+                    const ball = balls[i];
+                    if (ball.exists) {
+                        const dx = this.x - ball.x;
+                        const dy = this.y - ball.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < this.size + ball.size) {
+                            ball.exists = false;
+                            balls.splice(i, 1); // Remove the ball from the array
+                            ballCount--; // Decrement the ball counter
+                            ballCountDisplay.textContent = ballCount; // Update display
+                            break; // Important:  Only eat one ball per frame!
+                        }
+                    }
+                }
+            }
+        }
+
+
+        const balls = [];
+        let ballCount = 25; // Keep track of the number of balls
+        const evilCircle = new EvilCircle(random(0, width), random(0, height));
+        const ballCountDisplay = document.getElementById('ball-count');
+
+
+        while (balls.length < 25) {
+            const size = random(10, 20);
+            const ball = new Ball(
+                random(0 + size, width - size),
+                random(0 + size, height - size),
+                random(-14, 14),
+                random(-14, 14),
+                randomRGB(),
+                size
+            );
+
+            balls.push(ball);
+        }
+
+        ballCountDisplay.textContent = ballCount;
+
+
+        window.addEventListener("keydown", (e) => {
+            switch (e.key) {
+                case "a":
+                    evilCircle.x -= evilCircle.velX;
+                    break;
+                case "d":
+                    evilCircle.x += evilCircle.velX;
+                    break;
+                case "w":
+                    evilCircle.y -= evilCircle.velY;
+                    break;
+                case "s":
+                    evilCircle.y += evilCircle.velY;
+                    break;
+            }
+        });
+
+
+        function loop() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.1)";  // Even more subtle trails
+            ctx.fillRect(0, 0, width, height);
+
+            for (let i = 0; i < balls.length; i++) {
+                const ball = balls[i];
+                if (ball.exists) {
+                    ball.draw();
+                    ball.update();
+                    ball.collisionDetect();
+                }
+            }
+
+            evilCircle.draw();
+            evilCircle.checkBounds();
+            evilCircle.collisionDetect();
+
+            requestAnimationFrame(loop);
+        }
+
+        loop();
+    </script>
+</body>
+</html>
