@@ -8,71 +8,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wildlife Website</title>
-  <link href="style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wildlife Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light gray background */
+            color: #333;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: 700; /* Use 700 for the bold style */
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 1.1em;
+        }
+
+        .nav-links a:hover {
+            color: #0066cc;
+        }
+
+        .search-form {
+            display: flex;
+        }
+
+        .search-form input[type="search"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            min-width: 200px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-form input[type="submit"] {
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .search-form input[type="submit"]:hover {
+            background-color: #222;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .article-content {
+            flex: 2;
+            background-color: #fff; /* White background for article */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: #fff; /* White background for sidebar */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .byline {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .article-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .audio-player {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .related-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .related-links li {
+            margin-bottom: 15px;
+        }
+
+        .related-links a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: 400;
+        }
+
+        .related-links a:hover {
+            text-decoration: underline;
+            color: #0080ff;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                order: -1;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <h1>Welcome to our wildlife website</h1>
-  </header>
-  
-  <nav class="nav">
-    <ul class="nav-links">
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">OUR TEAM</a></li>
-      <li><a href="#">PROJECTS</a></li>
-      <li><a href="#">BLOG</a></li>
-    </ul>
+    <header class="header">
+        <h1>Welcome to our wildlife website</h1>
+    </header>
     
-    <form class="search-form">
-      <input type="search" placeholder="Search query">
-      <input type="submit" value="Go!">
-    </form>
-  </nav>
-  
-  <main class="main-content">
-    <article class="article-content">
-      <h2>The trouble with Bears</h2>
-      <p class="byline">By Evan Wild</p>
-      
-      <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.</p>
-      
-      <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.</p>
-      
-      <h3>Types of bear</h3>
-      <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
-      
-      <img src="wild-bear.jpg" alt="Wild bear in natural habitat" class="article-image">
-      
-      <h3>Habitats and Eating habits</h3>
-      <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside.</p>
-      
-      <img src="urban-bear.jpg" alt="Urban bear in city environment" class="article-image">
-      
-      <h3>Mating rituals</h3>
-      <p>The following audio clip contains a fact file providing more details about bear mating rituals:</p>
-      
-      <audio controls class="audio-player">
-        <source src="bear.mp3" type="audio/mp3">
-        <source src="bear.ogg" type="audio/ogg">
-        <p>Your browser doesn't support audio. <a href="bear.mp3">Download the audio file</a></p>
-      </audio>
-    </article>
+    <nav class="nav">
+        <ul class="nav-links">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">OUR TEAM</a></li>
+            <li><a href="#">PROJECTS</a></li>
+            <li><a href="#">BLOG</a></li>
+        </ul>
+        
+        <form class="search-form">
+            <input type="search" placeholder="Search query">
+            <input type="submit" value="Go!">
+        </form>
+    </nav>
     
-    <aside class="sidebar">
-      <h2>Related</h2>
-      <ul class="related-links">
-        <li><a href="#">The trouble with Bees</a></li>
-        <li><a href="#">The trouble with Otters</a></li>
-        <li><a href="#">The trouble with Penguins</a></li>
-        <li><a href="#">The trouble with Octopi</a></li>
-        <li><a href="#">The trouble with Lemurs</a></li>
-      </ul>
-    </aside>
-  </main>
-  
-  <script src="main.js"></script>
+    <main class="main-content">
+        <article class="article-content">
+            <h2>The trouble with Bears</h2>
+            <span class="byline">By Evan Wild</span>
+            
+            <p>Tall, lumbering, angry, dangerous. The real live bears of this world are proud, independent creatures, self-serving and always on the hunt for food. Nothing like the bears you see on TV, like Baloo from renowned documentary, The Jungle Book.</p>
+            
+            <p>So what are bears really like, and why does the world's media portray them with such a skewed vision? In this article we try to answer those questions, and give you a real insight into the life of the bear.</p>
+            
+            <h3>Types of bear</h3>
+            <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
+            
+            <img src="wild-bear.jpg" alt="Wild bear in natural habitat" class="article-image">
+            
+            <h3>Habitats and Eating habits</h3>
+            <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside.</p>
+            
+            <img src="urban-bear.jpg" alt="Urban bear in city environment" class="article-image">
+            
+            <h3>Mating rituals</h3>
+            <p>The following audio clip contains a fact file providing more details about bear mating rituals:</p>
+            
+            <audio controls class="audio-player">
+                <source src="bear.mp3" type="audio/mp3">
+                <source src="bear.ogg" type="audio/ogg">
+                <p>Your browser doesn't support audio. <a href="bear.mp3">Download the audio file</a></p>
+            </audio>
+        </article>
+        
+        <aside class="sidebar">
+            <h2>Related</h2>
+            <ul class="related-links">
+                <li><a href="#">The trouble with Bees</a></li>
+                <li><a href="#">The trouble with Otters</a></li>
+                <li><a href="#">The trouble with Penguins</a></li>
+                <li><a href="#">The trouble with Octopi</a></li>
+                <li><a href="#">The trouble with Lemurs</a></li>
+            </ul>
+        </aside>
+    </main>
+    
+    <script src="main.js"></script>
 </body>
 </html>
