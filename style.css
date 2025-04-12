@@ -6,6 +6,7 @@ body {
   padding: 0;
   color: #333;
 }
+
 /* Header */
 .header {
   text-align: center;
@@ -73,6 +74,8 @@ body {
 
 .sidebar {
   flex: 1;
+  background-color: #f0f0f0; 
+  padding: 10px;
 }
 
 /* Typography */
@@ -106,22 +109,22 @@ h3 {
 
 .related-links a {
   text-decoration: none;
-  color: #0066cc;
+  color: #333; 
 }
 
 .related-links a:hover {
   text-decoration: underline;
 }
+
 .article-image {
   max-width: 100%;
   height: auto;
   margin: 20px 0;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .audio-player {
   width: 100%;
   margin: 20px 0;
 }
-
