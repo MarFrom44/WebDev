@@ -231,7 +231,7 @@
                 <li><a href="#">BLOG</a></li>
             </ul>
             <form class="search-form">
-                <label for="search-query" class="screen-reader-text">Search</label>
+                
                 <input type="search" id="search-query" placeholder="Search query">
                 <input type="submit" value="Go!">
             </form>
@@ -282,3 +282,34 @@
         </aside>
     </main>
     
+    <script>
+        // Get references to the show/hide comments button and the comments section.
+        const showHideCommentsButton = document.getElementById("show-hide-comments");
+        const commentsSection = document.getElementById("comments");
+
+        // Check if the elements exist before adding the event listener.
+        if (showHideCommentsButton && commentsSection) {
+            // Add an event listener to the button.
+            showHideCommentsButton.addEventListener("click", function() {
+                // Toggle the display of the comments section.
+                if (commentsSection.style.display === "none") {
+                    commentsSection.style.display = "block";
+                    showHideCommentsButton.textContent = "Hide comments";
+                } else {
+                    commentsSection.style.display = "none";
+                    showHideCommentsButton.textContent = "Show comments";
+                }
+            });
+
+            // Add keyboard accessibility to the button.
+            showHideCommentsButton.addEventListener("keydown", function(event) {
+                // Check if the Enter key was pressed.
+                if (event.key === "Enter") {
+                    // Trigger the click event.
+                    showHideCommentsButton.click();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
