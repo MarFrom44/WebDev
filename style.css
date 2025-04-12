@@ -7,104 +7,114 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #a9a9a9;
+  background-color: #dde;
 }
 
 body {
-  width: 100%;
-  min-width: 800px;
+  width: 80%;
+  min-width: 1024px;
   margin: 0 auto;
 }
 
 /* || typography */
 
-h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+font[size="7"], font[size="6"], font[size="5"] {
+  font-family: 'Sonsie One', cursive;
   color: #2a2a2a;
 }
 
-p, input, li {
-  font-family: 'Roboto Condensed', sans-serif;
+p, input, li, table, label {
+  font-family: 'Open Sans Condensed', sans-serif;
   color: #2a2a2a;
 }
 
-h1 {
+font[size="7"] {
   font-size: 4rem;
   text-align: center;
+  color: white;
   text-shadow: 2px 2px 10px black;
 }
 
-h2 {
+font[size="6"] {
   font-size: 3rem;
   text-align: center;
 }
 
-h3 {
+font[size="5"] {
   font-size: 2.2rem;
 }
 
-p, li {
+p, li, table {
   font-size: 1.6rem;
   line-height: 1.5;
 }
 
 /* || header layout */
 
-header {
-  margin-bottom: 10px;
-  display: flex;
-  flex-flow: row wrap;
+div[class="nav"], article, footer, .secondary {
+  background-color: green;
 }
 
-body > * {
-  background-color: red;
-  padding: 1%;
+article, footer, .secondary {
+  padding: 10px 30px;
 }
 
-main, header, nav, article, aside, footer, section {
-  background-color: rgba(0,255,0,0.5);
-  padding: 1%;
+article {
+  margin-right: 10px;
 }
 
-h1 {
-  flex: 5;
-  text-transform: uppercase;
-}
-
-header img {
-  display: block;
-  height: 60px;
-  padding-top: 20.15px;
-}
-
-nav {
+div[class="nav"] {
   height: 50px;
-  flex: 100%;
+  background-color: ff80ff;
   display: flex;
+  padding: 1% 0;
+  margin-bottom: 10px;
 }
 
-nav ul {
+div[class="nav"] ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-nav li {
+div[class="nav"] li {
   display: inline;
   text-align: center;
   flex: 1;
 }
 
-nav a, nav span {
+div[class="nav"] a {
   display: inline-block;
   font-size: 2rem;
-  height: 3rem;
-  line-height: 1.7;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
+}
 
+div[class="nav"] .search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 2em;
+}
+
+.search input {
+  font-size: 1.6rem;
+  height: 32px;
+}
+
+.search input[type="search"] {
+  flex: 3;
+}
+
+.search input[type="submit"] {
+  flex: 1;
+  margin-left: 1rem;
+  background: #333;
+  border: 0;
+  color: white;
 }
 
 /* || main layout */
@@ -113,40 +123,128 @@ main {
   display: flex;
 }
 
-article, section {
-  flex: 4;
+article {
+  flex: 5;
 }
 
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);    
-    gap: 0px; 
-}
-
-.image-grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    box-sizing: border-box; 
-}
-
-aside {
-  flex: 1;
-  margin-left: 10px;
-  padding: 1%;
-}
-
-aside a {
-  display: block;
-  float: left;
-  width: 50%;
-}
-
-aside img {
-  max-width: 100%;
+.secondary {
+  flex: 2;
 }
 
 footer {
   margin-top: 10px;
+}
+
+/* Table styling */
+
+table {
+  width: 100%;
+  background-color: #dde;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+}
+
+td {
+  text-align: center;
+}
+
+th[scope="col"] {
+  border-bottom: 1px solid black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #def;
+}
+
+/* styling content images and audio */
+
+img, audio {
+  display: block;
+  margin: 0 auto;
+}
+
+audio {
+  width: 500px;
+}
+
+/* Comments styling */
+
+.comments {
+  background-color: #def;
+  padding: 10px;
+}
+
+.show-hide {
+  cursor: pointer;
+}
+
+.comments font[size="6"] {
+  font-size: 2rem;
+}
+
+.comments font[size="6"]:nth-of-type(2) {
+  margin-bottom: 0;
+}
+
+.comment-form {
+  margin-bottom: 3rem;
+}
+
+.comment-form .flex-pair {
+  display: flex;
+  padding: 0 3rem 1rem;
+}
+
+.comment-form label {
+  align-self: center;
+  flex: 2;
+  text-align: right;
+}
+
+.comment-form input {
+  margin-left: 1rem;
+  flex: 6;
+}
+
+.show-hide {
+  text-align: center;
+  width: 150px;
+}
+
+.comment-form input, .comment-form label, .show-hide {
+  font-size: 1.6rem;
+  line-height: 32px;
+}
+
+.comment-form input[type="submit"], .show-hide {
+  background: #333;
+  border: 0;
+  color: white;
+}
+
+.comment-form input[type="submit"] {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+
+.comment-container {
+  margin-top: 0;
+}
+
+.comment-container li {
+  list-style-type: none;
+  display: flex;
+}
+
+.comment-container li p:nth-child(1) {
+  flex: 1;
+  font-weight: bold;
+}
+
+.comment-container li p:nth-child(2) {
+  flex: 5;
 }
