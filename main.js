@@ -125,3 +125,30 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+            // Get references to the show/hide comments button and the comments section.
+        const showHideCommentsButton = document.getElementById("show-hide-comments");
+        const commentsSection = document.getElementById("comments");
+
+        // Check if the elements exist before adding the event listener.
+        if (showHideCommentsButton && commentsSection) {
+            // Add an event listener to the button.
+            showHideCommentsButton.addEventListener("click", function() {
+                // Toggle the display of the comments section.
+                if (commentsSection.style.display === "none") {
+                    commentsSection.style.display = "block";
+                    showHideCommentsButton.textContent = "Hide comments";
+                } else {
+                    commentsSection.style.display = "none";
+                    showHideCommentsButton.textContent = "Show comments";
+                }
+            });
+
+            // Add keyboard accessibility to the button.
+            showHideCommentsButton.addEventListener("keydown", function(event) {
+                // Check if the Enter key was pressed.
+                if (event.key === "Enter") {
+                    // Trigger the click event.
+                    showHideCommentsButton.click();
+                }
+            });
+        }
