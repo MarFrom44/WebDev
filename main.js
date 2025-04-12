@@ -105,3 +105,23 @@ if (document.readyState !== 'loading') {
     initAudioFallback();
 } else {
     document.addEventListener('DOMContentLoaded', initAudioFallback);
+
+
+// This ensures images load properly and provides fallbacks
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if images loaded
+  document.querySelectorAll('img').forEach(img => {
+    img.onerror = function() {
+      this.alt = 'Image failed to load: ' + this.alt;
+      this.style.border = '2px dashed #ccc';
+    };
+  });
+  
+  // Audio player fallback
+  const audio = document.querySelector('audio');
+  if (audio && !audio.canPlayType) {
+    audio.insertAdjacentHTML('afterend', 
+      '<div class="audio-fallback"><p>Audio not supported. <a href="bear.mp3">Download audio file</a></p></div>');
+  }
+});
+
