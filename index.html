@@ -32,7 +32,7 @@
             margin: 0;
             font-weight: 700;
             color: #fff;
-            background-color: #fff;
+            /* background-color: #fff;  Removed white background */
             padding: 10px 20px;
             border-radius: 0px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -45,6 +45,15 @@
             align-items: center;
             padding: 15px 20px;
             margin-bottom: 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            padding: 5px 20px;
+            border-radius: 0px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .nav-links {
@@ -62,9 +71,7 @@
             text-transform: uppercase;
             font-size: 1.2em;
             padding: 10px 15px;
-            background-color: #fff;
             border-radius: 0px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .nav-links a:hover {
@@ -75,10 +82,8 @@
         .search-form {
             display: flex;
             align-items: center;
-            background-color: #fff;
-            padding: 5px;
-            border-radius: 0px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            margin-left: 20px;
         }
 
         .search-form input[type="search"] {
@@ -166,6 +171,7 @@
 
         .related-links li {
             margin-bottom: 15px;
+            list-style-type: disc;
         }
 
         .related-links a {
@@ -207,17 +213,18 @@
     </header>
     
     <nav class="nav">
-        <ul class="nav-links">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">OUR TEAM</a></li>
-            <li><a href="#">PROJECTS</a></li>
-            <li><a href="#">BLOG</a></li>
-        </ul>
-        
-        <form class="search-form">
-            <input type="search" placeholder="Search query">
-            <input type="submit" value="Go!">
-        </form>
+        <div class="nav-wrapper">
+            <ul class="nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">OUR TEAM</a></li>
+                <li><a href="#">PROJECTS</a></li>
+                <li><a href="#">BLOG</a></li>
+            </ul>
+            <form class="search-form">
+                <input type="search" placeholder="Search query">
+                <input type="submit" value="Go!">
+            </form>
+        </div>
     </nav>
     
     <main class="main-content">
@@ -264,4 +271,5 @@
     <script src="main.js"></script>
 </body>
 </html>
+
 
