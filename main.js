@@ -1,40 +1,107 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const showHideBtn = document.querySelector('.show-hide');
-  const commentWrapper = document.querySelector('.comment-wrapper');
-  
-  // Initialize as hidden
-  commentWrapper.hidden = true;
-  showHideBtn.setAttribute('aria-expanded', 'false');
-
-  // Toggle visibility
-  showHideBtn.addEventListener('click', function() {
-    const isHidden = commentWrapper.hidden;
-    commentWrapper.hidden = !isHidden;
-    this.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
-    this.textContent = isHidden ? 'Hide comments' : 'Show comments';
-  });
-
-  // Comment form submission
-  const commentForm = document.querySelector('.comment-form');
-  commentForm.addEventListener('submit', function(e) {
-    e.preventDefault();
+    // ----- COMMENT SECTION TOGGLE -----
+    const commentToggle = document.querySelector('.show-hide-comments');
+    const commentSection = document.querySelector('.comment-section');
     
-    const nameInput = document.getElementById('name');
-    const commentInput = document.getElementById('comment');
-    const commentContainer = document.querySelector('.comment-container');
-    
-    if (nameInput.value.trim() && commentInput.value.trim()) {
-      const newComment = document.createElement('li');
-      newComment.innerHTML = `
-        <p><strong>${nameInput.value}</strong></p>
-        <p>${commentInput.value}</p>
-      `;
-      commentContainer.appendChild(newComment);
+    if (commentToggle && commentSection) {
+        commentToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            commentSection.hidden = isExpanded;
+            this.textContent = isExpanded ? 'Show Comments' : 'Hide Comments';
+        });
 
-      nameInput.value = '';
-      commentInput.value = '';
-
-      nameInput.focus();
+        // Make toggle keyboard accessible
+        commentToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
     }
-  });
+
+  
+    const commentForm = document.querySelector('.comment-form');
+    if (commentForm) {
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('comment-name').value.trim();
+            const comment = document.getElementById('comment-text').value.trim();
+            
+            if (name && comment) {
+                const commentList = document.querySelector('.comment-list');
+                const newComment = document.createElement('li');
+                newComment.innerHTML = `
+                    <p class="comment-author">${name}</p>
+                    <p class="comment-text">${comment}</p>
+                `;
+                commentList.appendChild(newComment);
+                
+                // Reset form
+                this.reset();
+                
+                // Set focus back to name field
+                document.getElementById('comment-name').focus();
+            }
+        });
+    }
+
+    // Add captions to images programmatically
+    const images = document.querySelectorAll('article img');
+    images.forEach(img => {
+        const altText = img.getAttribute('alt');
+        if (altText) {
+            const caption = document.createElement('p');
+            caption.className = 'image-caption';
+            caption.textContent = altText;
+            img.insertAdjacentElement('afterend', caption);
+        }
+    });
+
+
+    // External link indicators
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+        if (link.hostname !== window.location.hostname) {
+            link.setAttribute('target', '_blank');
+            link.setAttribute('rel', 'noopener noreferrer');
+            link.innerHTML += ' <span aria-hidden="true">↗</span>';
+            link.setAttribute('aria-label', `${link.textContent} (opens in new tab)`);
+        }
+    });
+
+    // Track keyboard navigation for focus styles
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            document.documentElement.classList.add('using-keyboard');
+        }
+    });
+
+    document.addEventListener('mousedown', function() {
+        document.documentElement.classList.remove('using-keyboard');
+    });
 });
+
+// Audio player fallback for older browsers
+function initAudioFallback() {
+    const audio = document.querySelector('audio');
+    if (audio && !audio.canPlayType) {
+        const fallback = document.createElement('div');
+        fallback.className = 'audio-fallback';
+        fallback.innerHTML = `
+            <p>Audio player not supported. Download the audio:</p>
+            <ul>
+                <li><a href="bear.mp3">MP3 format</a></li>
+                <li><a href="bear.ogg">OGG format</a></li>
+            </ul>
+        `;
+        audio.parentNode.replaceChild(fallback, audio);
+    }
+}
+
+// Initialize when DOM is ready
+if (document.readyState !== 'loading') {
+    initAudioFallback();
+} else {
+    document.addEventListener('DOMContentLoaded', initAudioFallback);
