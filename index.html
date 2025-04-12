@@ -2,7 +2,7 @@
  Name: Marquice Lowes
  file: https://marfrom44.github.io/WebDev/BouncingBalls.html
  Date: Apr 11th, 2025
- Description: A accessible website with fixed errors
+ Description: An accessible website with fixed errors
 -->
 
 <!DOCTYPE html>
@@ -14,15 +14,12 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <a href="#maincontent" class="skip-link">Skip to main content</a>
-  
   <header class="header">
     <h1>Welcome to our wildlife website</h1>
   </header>
   
-  <nav class="nav" aria-label="Main navigation">
+  <nav class="nav">
     <ul>
       <li><a href="#">HOME</a></li>
       <li><a href="#">OUR TEAM</a></li>
@@ -30,14 +27,13 @@
       <li><a href="#">BLOG</a></li>
     </ul>
     
-    <form class="search" role="search">
-      <label for="site-search" class="visually-hidden">Search wildlife site</label>
-      <input type="search" id="site-search" name="q" placeholder="Search query" aria-label="Search through site content">
+    <form class="search">
+      <input type="search" name="q" placeholder="Search query">
       <input type="submit" value="Go!">
     </form>
   </nav>
   
-  <main id="maincontent">
+  <main>
     <article>
       <h2>The trouble with Bears</h2>
       <p class="byline">By Evan Wild</p>
@@ -49,36 +45,10 @@
       <h3>Types of bear</h3>
       <p>Bears come in two varieties — large and medium. You don't get small bears. If you have seen a small bear, then it was in fact probably a baby bear (cub) from another species.</p>
       
-      <img src="media/wild-bear.jpg" alt="Wild bear in natural habitat">
-      
-      <section class="comments">
-        <button class="show-hide" aria-expanded="false" aria-controls="comment-wrapper">Show comments</button>
-        
-        <div class="comment-wrapper" id="comment-wrapper" hidden>
-          <form class="comment-form">
-            <div class="flex-pair">
-              <label for="name">Your name:</label>
-              <input type="text" id="name" placeholder="Enter your name">
-            </div>
-            <div class="flex-pair">
-              <label for="comment">Your comment:</label>
-              <input type="text" id="comment" placeholder="Enter your comment">
-            </div>
-            <input type="submit" value="Submit comment">
-          </form>
-          
-          <h4>Comments</h4>
-          <ul class="comment-container">
-            <li>
-              <p>Bob Fossil</p>
-              <p>Oh I am so glad you taught me all about the big brown angry guys in the woods.</p>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <p>Bears can also be classified in terms of their habitat — both large and medium bears are just as at home in urban areas as they are in the countryside.</p>
     </article>
     
-    <aside class="secondary" aria-label="Related articles">
+    <aside class="secondary">
       <h2>Related</h2>
       <ul>
         <li><a href="#">The trouble with Bees</a></li>
@@ -89,11 +59,5 @@
       </ul>
     </aside>
   </main>
-  
-  <footer>
-    <p>©Copyright 2050 by nobody. All rights reversed.</p>
-  </footer>
-  
-  <script src="main.js"></script>
 </body>
 </html>
