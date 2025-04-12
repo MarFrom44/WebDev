@@ -32,10 +32,8 @@
             margin: 0;
             font-weight: 700;
             color: #fff;
-            /* background-color: #fff;  Removed white background */
             padding: 10px 20px;
             border-radius: 0px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: inline-block;
         }
 
@@ -43,15 +41,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 15px 0; /* Removed padding from .nav */
             margin-bottom: 20px;
         }
 
         .nav-wrapper {
             display: flex;
+            width: 100%; /* Make it full width */
             align-items: center;
             background-color: #fff;
-            padding: 5px 20px;
+            padding: 10px 20px; /* Added padding to wrapper */
             border-radius: 0px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -83,7 +82,7 @@
             display: flex;
             align-items: center;
             padding: 0;
-            margin-left: 20px;
+            margin-left: auto; /* Push search form to the right */
         }
 
         .search-form input[type="search"] {
@@ -271,5 +270,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-
-
